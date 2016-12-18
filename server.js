@@ -4,19 +4,21 @@
 var express = require('express');
 var app = express();
 var MongoClient = require('mongodb').MongoClient;
-var Bing = require('node-bing-api')({ accKey: "31686f2bd2e34ac082269fb6f4513a4c" });
+var Bing = require('node-bing-api')({accKey: "31686f2bd2e34ac082269fb6f4513a4c"});
 
 
-app.get('/', function(req, res){
-    Bing.images("cats", {
-        top: 15,   // Number of results (max 50)
-        skip: 3    // Skip first 3 result
-    }, function(error, res, body){
-        console.log(body);
+app.get('/api/search/*', function (req, res) {
+    var searchImg = req.params['0'];
+    var offset = req.query['offset'];
+
+    Bing.images(searchImg, {
+        top: 10,   // Number of results (max 50)
+        skip: offset    // Skip first 'offset' result
+    }, function (error, respond, body) {
+        res.send(body.value);
     });
-    res.send('hello world');
 });
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3000, function () {
     console.log('Ready. Listening server at port 3000')
 });
