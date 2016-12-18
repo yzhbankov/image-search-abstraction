@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Image Search Abstraction Layer</title>
+</head>
+<body>
+<h1>FCC API: Image Search Abstraction Layer</h1>
+
+<div class="block">
+    <div class="title">User Stories:</div>
+    <li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+    <li>I can paginate through the responses by adding a ?offset=2 parameter to the URL.</li>
+    <li>I can get a list of the most recently submitted search strings.</li>
+</div>
+<div class="block">
+    <div class="title">Example usage:</div>
+    <li>To search for <strong>'game of thrones'</strong> images try
+        <span class="link">https://abrden-bing-search.herokuapp.com/search/game of thrones</span>
+    </li>
+    <li>You can get 5 results by adding ?offset=5 like <span class="link">https://abrden-bing-search.herokuapp.com/search/game of
+        thrones?offset=5</span>
+    </li>
+    <li>To see the last 10 searches go to <span class="link">https://abrden-bing-search.herokuapp.com/latest</span></li>
+</div>
+<div class="block">
+    <div class="title">Example output:</div>
+    <li>Output for the image results <span class="link">[ { url: 'http://...', snippet: '...', thumbnail: 'http://...', context:
+        'http://...' }, ... ]</span>
+    </li>
+    <li>Output for the most recent searches <span class="link">[ { term: '...', when: '...' }, ... ]</span></li>
+</div>
+</body>
+</html>

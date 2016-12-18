@@ -6,8 +6,12 @@ var app = express();
 var MongoClient = require('mongodb').MongoClient;
 var Bing = require('node-bing-api')({accKey: "31686f2bd2e34ac082269fb6f4513a4c"});
 
+app.use(express.static('public'));
 
-app.get('/api/search/*', function (req, res) {
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/public');
+});
+app.get('/search/*', function (req, res) {
     var searchImg = req.params['0'];
     var offset = req.query['offset'];
 
