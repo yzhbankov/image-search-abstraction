@@ -58,7 +58,7 @@ app.get('/latest', function (req, res) {
             }
             res.send(result);
         });
-        
+
         db.close();
     });
 });
