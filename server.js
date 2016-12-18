@@ -5,7 +5,7 @@ var express = require('express');
 var app = express();
 var curTime = require('./getdate');
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://yzhbankov2:assword1360@ds139428.mlab.com:39428/heroku_2hgzdf2x';
+var url = 'mongodb://yzhbankov2:password1360@ds139428.mlab.com:39428/heroku_2hgzdf2x';
 
 //var url = 'mongodb://localhost:27017/image-search';
 var Bing = require('node-bing-api')({accKey: "31686f2bd2e34ac082269fb6f4513a4c"});
